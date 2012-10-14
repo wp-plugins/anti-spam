@@ -3,12 +3,12 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments
 Requires at least: 3.0
-Tested up to: 3.4.1
-Stable tag: 1.0
+Tested up to: 3.4.2
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-No spam in comments. No captcha. No moderation.
+No spam in comments. No captcha.
 
 == Description ==
 
@@ -41,6 +41,9 @@ You may enable sending all rejected spam comments to admin email.
 You should edit "anti-spam.php" file and find "$antispam_unqprfx_send_spam_comment_to_admin" and make it "true".
 
 == Changelog ==
+
+= 1.1 - 2012-10-14 =
+* sending answer from server to client into hidden field (because client year and server year could mismatch)
 
 = 1.0 =
 * initial release
