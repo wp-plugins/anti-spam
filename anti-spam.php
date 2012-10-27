@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Anti-spam
-Plugin URI: http://web-profile.com.ua/wordpress/plugins/anti-spam/
+Plugin URI: http://wordpress.org/extend/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 1.1
+Version: 1.2
 Author: webvitaly
-Author URI: http://web-profile.com.ua/wordpress/
+Author URI: http://profiles.wordpress.org/webvitaly/
 License: GPLv2 or later
 */
 
@@ -20,7 +20,8 @@ future to do list:
 
 $antispam_unqprfx_send_spam_comment_to_admin = false; // if true, than rejected spam comments will be sent to admin email
 
-$antispam_unqprfx_version = '1.1';
+$antispam_unqprfx_version = '1.2';
+
 
 
 function antispam_unqprfx_scripts_styles_init() {
@@ -115,3 +116,13 @@ function antispam_unqprfx_check_comment( $commentdata ) {
 if( ! is_admin() ) {
 	add_filter( 'preprocess_comment', 'antispam_unqprfx_check_comment', 1 );
 }
+
+
+function antispam_unqprfx_plugin_meta( $links, $file ) { // add 'Support' and 'Donate' links to plugin meta row
+	if ( strpos( $file, 'anti-spam.php' ) !== false ) {
+		$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/wordpress/plugins/anti-spam/" title="Need help?">' . __('Support') . '</a>' ) );
+		$links = array_merge( $links, array( '<strong><a href="http://web-profile.com.ua/donate/" title="Support the development">' . __('Donate') . '</a></strong>' ) );
+	}
+	return $links;
+}
+add_filter( 'plugin_row_meta', 'antispam_unqprfx_plugin_meta', 10, 2 );

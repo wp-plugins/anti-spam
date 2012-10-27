@@ -1,10 +1,10 @@
 === Anti-spam ===
 Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
-Tags: spam, spammer, spammers, comment, comments
+Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, antibot, anti-bot, blockspam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
-Tested up to: 3.4.2
-Stable tag: 1.1
+Tested up to: 3.5
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,12 +15,12 @@ No spam in comments. No captcha.
 Plugin will block spam in comments. Users hate spam in comments and also they hate captcha.
 So Anti-spam plugin will block spam automatically without moderation and silently for site visitors.
 
-[Anti-spam plugin page](http://web-profile.com.ua/wordpress/plugins/anti-spam/ "Need help with the plugin? Try to find it here.")
+**[Anti-spam support page](http://web-profile.com.ua/wordpress/plugins/anti-spam/ "Need help with the plugin?")**
 
 = Useful plugins: =
 * ["Page-list" - show list of pages with shortcodes](http://wordpress.org/extend/plugins/page-list/ "list of pages with shortcodes")
 * ["Iframe" - embed iframe with shortcode](http://wordpress.org/extend/plugins/iframe/ "embed iframe")
-* ["Login-Logout" - default Meta widget replacement](http://wordpress.org/extend/plugins/login-logout/ "default Meta widget replacement")
+* ["Filenames to latin" - sanitize filenames to latin during upload](http://wordpress.org/extend/plugins/filenames-to-latin/ "sanitize filenames to latin")
 
 == Installation ==
 
@@ -41,6 +41,9 @@ You may enable sending all rejected spam comments to admin email.
 You should edit "anti-spam.php" file and find "$antispam_unqprfx_send_spam_comment_to_admin" and make it "true".
 
 == Changelog ==
+
+= 1.2 - 2012-10-28 =
+* minor changes
 
 = 1.1 - 2012-10-14 =
 * sending answer from server to client into hidden field (because client year and server year could mismatch)
