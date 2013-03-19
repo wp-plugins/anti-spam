@@ -5,23 +5,13 @@ Plugin URI: http://wordpress.org/extend/plugins/anti-spam/
 Description: No spam in comments. No captcha.
 Version: 1.2
 Author: webvitaly
-Author URI: http://profiles.wordpress.org/webvitaly/
+Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv2 or later
-*/
-
-/*
-future to do list:
-- block spam in trackbacks and pingbacks
-- show spam counter in admin section
-- include js only on singular pages with comments enabled
-- add options page if it will be needed
-- also check year+1 and year-1 to be equal year for users could leave comments in the end of the year
 */
 
 $antispam_unqprfx_send_spam_comment_to_admin = false; // if true, than rejected spam comments will be sent to admin email
 
 $antispam_unqprfx_version = '1.2';
-
 
 
 function antispam_unqprfx_scripts_styles_init() {
@@ -118,10 +108,10 @@ if( ! is_admin() ) {
 }
 
 
-function antispam_unqprfx_plugin_meta( $links, $file ) { // add 'Support' and 'Donate' links to plugin meta row
+function antispam_unqprfx_plugin_meta( $links, $file ) { // add 'Plugin page' and 'Donate' links to plugin meta row
 	if ( strpos( $file, 'anti-spam.php' ) !== false ) {
-		$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/wordpress/plugins/anti-spam/" title="Need help?">' . __('Support') . '</a>' ) );
-		$links = array_merge( $links, array( '<strong><a href="http://web-profile.com.ua/donate/" title="Support the development">' . __('Donate') . '</a></strong>' ) );
+		$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/wordpress/plugins/anti-spam/" title="Plugin page">' . __('Anti-spam') . '</a>' ) );
+		$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/donate/" title="Support the development">' . __('Donate') . '</a>' ) );
 	}
 	return $links;
 }
