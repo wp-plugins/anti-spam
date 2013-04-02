@@ -36,7 +36,7 @@ Need [more info about the plugin](http://wordpress.org/extend/plugins/anti-spam/
 
 == Frequently Asked Questions ==
 
-= How does it work? =
+= How does Anti-spam plugin work? =
 
 Two extra hidden fields are added to comments form. First is the question about the current year. Second should be empty.
 If the user visits site, than first field is answered automatically with javascript, second field left blank and both fields are hidden and invisible for the user.
@@ -47,14 +47,14 @@ If the spammer tries to submit comment form, he will make a mistake with answer 
 You may enable sending all rejected spam comments to admin email.
 You should edit "anti-spam.php" file and find "$antispam_unqprfx_send_spam_comment_to_admin" and make it "true".
 
-= What is the percantage of spam blocked? =
+= What is the percentage of spam blocked? =
 
 Anti-spam plugin blocks about 99.9% of automatic spam messages (sent by spam-bots via post requests). 
 But Anti-spam plugin will pass the messages which were submitted by spammers manually via browser. But such messages happens very rarely.
 
-= Not enough information for you? =
+= Not enough information about the plugin? =
 
-You may check out the [source code of the plugin](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/anti-spam.php)
+You may check out the [source code of the plugin](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/anti-spam.php).
 The plugin has about 100 lines of code and pretty easy to read. I was trying my best to make plugin's code clean.
 Plugin is small but it makes all the dirty work against spam pretty good. You may give it a try.
 
