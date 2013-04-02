@@ -38,8 +38,8 @@ Need [more info about the plugin](http://wordpress.org/extend/plugins/anti-spam/
 
 = How does Anti-spam plugin work? =
 
-Two extra hidden fields are added to comments form. First is the question about the current year. Second should be empty.
-If the user visits site, than first field is answered automatically with javascript, second field left blank and both fields are hidden and invisible for the user.
+Two extra hidden fields are added to comments form. First field is the question about the current year. Second field should be empty.
+If the user visits site, than first field is answered automatically with javascript, second field left blank and both fields are hidden by javascript and css and invisible for the user.
 If the spammer tries to submit comment form, he will make a mistake with answer on first field or tries to submit an empty field and spam comment will be automatically rejected.
 
 = How to test what spam comments are rejected? =
