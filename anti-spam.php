@@ -3,7 +3,7 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/extend/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 1.2
+Version: 1.3
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv2 or later
@@ -11,7 +11,7 @@ License: GPLv2 or later
 
 $antispam_unqprfx_send_spam_comment_to_admin = false; // if true, than rejected spam comments will be sent to admin email
 
-$antispam_unqprfx_version = '1.2';
+$antispam_unqprfx_version = '1.3';
 
 
 function antispam_unqprfx_scripts_styles_init() {
@@ -27,15 +27,15 @@ add_action('init', 'antispam_unqprfx_scripts_styles_init');
 function antispam_unqprfx_form_part() {
 	$antispam_unqprfx_form_part = '
 <p class="comment-form-anti-spam" style="clear:both;">
-	<label for="anti-spam">Current ye@r</label> <span class="required">*</span>
-	<input type="hidden" name="anti-spam-0" id="anti-spam-0" value="'.date('Y').'" />
-	<input type="text" name="anti-spam" id="anti-spam" size="30" value="" />
+	<label for="anti-spam-q">Current <span style="display:none;">month</span> <span style="display:inline;">ye@r</span> <span style="display:none;">day</span></label> <span class="required">*</span>
+	<input type="hidden" name="anti-spam-a" id="anti-spam-a" value="'.date('Y').'" />
+	<input type="text" name="anti-spam-q" id="anti-spam-q" size="30" value="1980" />
 </p>
 '; // question (hidden with js) [aria-required="true" required="required"]
 	$antispam_unqprfx_form_part .= '
 <p class="comment-form-anti-spam-2" style="display:none;">
-	<label for="anti-spam-2">Leave this field empty</label> <span class="required">*</span>
-	<input type="text" name="anti-spam-2" id="anti-spam-2" size="30" value=""/>
+	<label for="anti-spam-e">Leave this field empty</label> <span class="required">*</span>
+	<input type="text" name="anti-spam-e" id="anti-spam-e" size="30" value=""/>
 </p>
 '; // empty field (hidden with css)
 	echo $antispam_unqprfx_form_part;
@@ -51,15 +51,15 @@ function antispam_unqprfx_check_comment( $commentdata ) {
 	if( !is_user_logged_in() && $comment_type != 'pingback' && $comment_type != 'trackback' /* && !current_user_can( 'publish_posts' ) */ ) { // logged in user is not a spammer
 		$error_flag = false;
 
-		if ( trim( $_POST['anti-spam'] ) != date('Y') ) { // answer is wrong - maybe spam
+		if ( trim( $_POST['anti-spam-q'] ) != date('Y') ) { // answer is wrong - maybe spam
 			$error_flag = true;
-			if ( empty( $_POST['anti-spam'] ) ) { // empty answer - maybe spam
+			if ( empty( $_POST['anti-spam-q'] ) ) { // empty answer - maybe spam
 				$antispam_unqprfx_error_message .= '<br> Error: empty answer. ';
 			}else{
 				$antispam_unqprfx_error_message .= '<br> Error: answer is wrong. ';
 			}
 		}
-		if ( !empty( $_POST['anti-spam-2'] ) ) { // field is not empty - maybe spam
+		if ( ! empty( $_POST['anti-spam-e'] ) ) { // field is not empty - maybe spam
 			$antispam_unqprfx_error_flag = true;
 			$antispam_unqprfx_error_message .= '<br> Error: field should be empty. ';
 		}

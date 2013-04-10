@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,9 @@ The plugin has about 100 lines of code and pretty easy to read. I was trying my 
 Plugin is small but it makes all the dirty work against spam pretty good. You may give it a try.
 
 == Changelog ==
+
+= 1.3 - 2013-04-10 =
+* changing the input names and add some more traps because some spammers are passing the plugin
 
 = 1.2 - 2012-10-28 =
 * minor changes
