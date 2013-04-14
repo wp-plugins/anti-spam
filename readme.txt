@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.4
+Stable tag: 1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,6 +52,14 @@ You should edit "anti-spam.php" file and find "$antispam_send_spam_comment_to_ad
 Anti-spam plugin blocks about 99.9% of automatic spam messages (sent by spam-bots via post requests). 
 But Anti-spam plugin will pass the messages which were submitted by spammers manually via browser. But such messages happens very rarely.
 
+= What about trackback spam? =
+
+Users rarely use trackbacks because it is manual and requires extra input. Spammers uses trackbacks because it is easy to cheat here.
+Users use pingbacks very often because they work automatically. Spammers does not use pingbacks because backlinks are checked.
+So trackbacks are blocked by default but pingbacks are enabled. You may enable trackbacks if you use it.
+Just edit "anti-spam.php" file and find "$antispam_allow_trackbacks" and make it "true".
+You may read more about the [difference between trackbacks and pingbacks](http://web-profile.com.ua/web/trackback-vs-pingback/).
+
 = Not enough information about the plugin? =
 
 You may check out the [source code of the plugin](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/anti-spam.php).
@@ -59,11 +67,15 @@ The plugin has about 100 lines of code and pretty easy to read. I was trying my 
 Plugin is small but it makes all the dirty work against spam pretty good. You may give it a try.
 
 = How to reduce the amount of spam? =
+
 Do not order spam-newsletters because people hate spam and people will not like products received from spam.
 Do not order products from spam. If spam will be less effective than spammers will stop sending it.
 
 
 == Changelog ==
+
+= 1.5 - 2013-04-15 =
+* disable trackbacks because of spam (pingbacks are enabled)
 
 = 1.4 - 2013-04-13 =
 * code refactor
