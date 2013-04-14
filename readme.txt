@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.3
+Stable tag: 1.4a
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,7 +45,7 @@ If the spammer tries to submit comment form, he will make a mistake with answer 
 = How to test what spam comments are rejected? =
 
 You may enable sending all rejected spam comments to admin email.
-You should edit "anti-spam.php" file and find "$antispam_unqprfx_send_spam_comment_to_admin" and make it "true".
+You should edit "anti-spam.php" file and find "$antispam_send_spam_comment_to_admin" and make it "true".
 
 = What is the percentage of spam blocked? =
 
@@ -58,7 +58,16 @@ You may check out the [source code of the plugin](http://plugins.trac.wordpress.
 The plugin has about 100 lines of code and pretty easy to read. I was trying my best to make plugin's code clean.
 Plugin is small but it makes all the dirty work against spam pretty good. You may give it a try.
 
+= How to reduce the amount of spam? =
+Do not order spam-newsletters because people hate spam and people will not like products received from spam.
+Do not order products from spam. If spam will be less effective than spammers will stop sending it.
+
+
 == Changelog ==
+
+= 1.4 - 2013-04-13 =
+* code refactor
+* renaming empty field to "*-email-url" to trap more spam
 
 = 1.3 - 2013-04-10 =
 * changing the input names and add some more traps because some spammers are passing the plugin
