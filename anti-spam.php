@@ -66,7 +66,7 @@ function antispam_unqprfx_check_comment( $commentdata ) {
 			}
 		}
 		if ( !empty( $_POST['anti-spam-2'] ) ) { // field is not empty - maybe spam
-			$antispam_unqprfx_error_flag = true;
+			$error_flag = true;
 			$antispam_unqprfx_error_message .= '<br> Error: field should be empty. ';
 		}
 		if( $error_flag ){ // if we have error
