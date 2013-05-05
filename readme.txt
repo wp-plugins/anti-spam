@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.5
+Stable tag: 1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,7 +45,7 @@ If the spammer tries to submit comment form, he will make a mistake with answer 
 = How to test what spam comments are rejected? =
 
 You may enable sending all rejected spam comments to admin email.
-You should edit "anti-spam.php" file and find "$antispam_send_spam_comment_to_admin" and make it "true".
+Edit [anti-spam.php](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/anti-spam.php) file and find "$antispam_send_spam_comment_to_admin" and make it "true".
 
 = What is the percentage of spam blocked? =
 
@@ -57,7 +57,7 @@ But Anti-spam plugin will pass the messages which were submitted by spammers man
 Users rarely use trackbacks because it is manual and requires extra input. Spammers uses trackbacks because it is easy to cheat here.
 Users use pingbacks very often because they work automatically. Spammers does not use pingbacks because backlinks are checked.
 So trackbacks are blocked by default but pingbacks are enabled. You may enable trackbacks if you use it.
-Just edit "anti-spam.php" file and find "$antispam_allow_trackbacks" and make it "true".
+Edit [anti-spam.php](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/anti-spam.php) file and find "$antispam_allow_trackbacks" and make it "true".
 You may read more about the [difference between trackbacks and pingbacks](http://web-profile.com.ua/web/trackback-vs-pingback/).
 
 = Not enough information about the plugin? =
@@ -73,6 +73,9 @@ Do not order products from spam. If spam will be less effective than spammers wi
 
 
 == Changelog ==
+
+= 1.6 - 2013-05-05 =
+* add some more debug info in errors text
 
 = 1.5 - 2013-04-15 =
 * disable trackbacks because of spam (pingbacks are enabled)

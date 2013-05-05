@@ -3,7 +3,7 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/extend/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 1.5
+Version: 1.6
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv2 or later
@@ -15,7 +15,7 @@ $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed
 // trackbacks almost not used by users, but mostly used by spammers; pingbacks are always enabled
 // more about the difference between trackback and pingback - http://web-profile.com.ua/web/trackback-vs-pingback/
 
-$antispam_version = '1.5';
+$antispam_version = '1.6';
 
 
 if ( ! function_exists( 'antispam_scripts_styles_init' ) ) :
@@ -102,14 +102,14 @@ function antispam_check_comment( $commentdata ) {
 		if ( trim( $_POST['anti-spam-q'] ) != date('Y') ) { // answer is wrong - maybe spam
 			$spam_flag = true;
 			if ( empty( $_POST['anti-spam-q'] ) ) { // empty answer - maybe spam
-				$antispam_error_message .= '<br> Error: empty answer. ';
+				$antispam_error_message .= '<br> Error: empty answer. ['.$_POST['anti-spam-q'].']';
 			} else {
-				$antispam_error_message .= '<br> Error: answer is wrong. ';
+				$antispam_error_message .= '<br> Error: answer is wrong. ['.$_POST['anti-spam-q'].']';
 			}
 		}
 		if ( ! empty( $_POST['anti-spam-e-email-url'] ) ) { // field is not empty - maybe spam
 			$spam_flag = true;
-			$antispam_error_message .= '<br> Error: field should be empty. ';
+			$antispam_error_message .= '<br> Error: field should be empty. ['.$_POST['anti-spam-e-email-url'].']';
 		}
 		if ( $spam_flag ) { // if we have spam
 			if ( $antispam_send_spam_comment_to_admin ) { // if sending email to admin is enabled
