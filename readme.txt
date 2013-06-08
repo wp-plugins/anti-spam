@@ -27,7 +27,7 @@ Need [more info about the plugin](http://wordpress.org/plugins/anti-spam/faq/)?
 = Useful: =
 * ["Page-list" - show list of pages with shortcodes](http://wordpress.org/plugins/page-list/ "list of pages with shortcodes")
 * ["Iframe" - embed iframe with shortcode](http://wordpress.org/plugins/iframe/ "embed iframe")
-* ["Filenames to latin" - sanitize filenames to latin during upload](http://wordpress.org/plugins/filenames-to-latin/ "sanitize filenames to latin")
+* ["activetab" - responsive light theme](http://wordpress.org/themes/activetab "responsive light theme")
 
 == Installation ==
 
