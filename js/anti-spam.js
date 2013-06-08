@@ -1,7 +1,7 @@
 /*
 Anti-spam plugin
 No spam in comments. No captcha.
-wordpress.org/extend/plugins/anti-spam/
+wordpress.org/plugins/anti-spam/
 */
 
 jQuery(function($){
