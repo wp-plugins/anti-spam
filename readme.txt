@@ -36,7 +36,7 @@ Need [more info about the plugin](http://wordpress.org/plugins/anti-spam/faq/)?
 
 == Frequently Asked Questions ==
 
-= Does Anti-spam plugin works with Jetpack comments =
+= Does Anti-spam plugin works with Jetpack comments? =
 
 Anti-spam plugin does not work with [Jetpack comments](http://jetpack.me/support/comments/).
 Jetpack comments use iframe to insert comment form and it is impossible to access it via javascript because of security reasons.
