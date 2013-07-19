@@ -49,7 +49,7 @@ If the spammer tries to submit comment form, he will make a mistake with answer 
 You may enable sending all rejected spam comments to admin email.
 Edit [anti-spam.php](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/anti-spam.php) file and find "$antispam_send_spam_comment_to_admin" and make it "true".
 
-= Does Anti-spam plugin works with Jetpack Comments? =
+= Does Anti-spam plugin work with Jetpack Comments? =
 
 Anti-spam plugin does not work with [Jetpack Comments](http://jetpack.me/support/comments/).
 Jetpack Comments use iframe to insert comment form and it is impossible to access it via javascript because of security reasons.
