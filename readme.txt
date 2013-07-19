@@ -38,12 +38,6 @@ Important: Anti-spam plugin does not work with Jetpack comments!
 
 == Frequently Asked Questions ==
 
-= Does Anti-spam plugin works with Jetpack comments? =
-
-Anti-spam plugin does not work with [Jetpack comments](http://jetpack.me/support/comments/).
-Jetpack comments use iframe to insert comment form and it is impossible to access it via javascript because of security reasons.
-If you use Jetpack comments - you should find some other plugin to block spam.
-
 = How does Anti-spam plugin work? =
 
 Two extra hidden fields are added to comments form. First field is the question about the current year. Second field should be empty.
@@ -54,6 +48,12 @@ If the spammer tries to submit comment form, he will make a mistake with answer 
 
 You may enable sending all rejected spam comments to admin email.
 Edit [anti-spam.php](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/anti-spam.php) file and find "$antispam_send_spam_comment_to_admin" and make it "true".
+
+= Does Anti-spam plugin works with Jetpack comments? =
+
+Anti-spam plugin does not work with [Jetpack comments](http://jetpack.me/support/comments/).
+Jetpack comments use iframe to insert comment form and it is impossible to access it via javascript because of security reasons.
+If you use Jetpack comments - you should find some other plugin to block spam. I recommend [Akismet](http://wordpress.org/plugins/akismet/).
 
 = What is the percentage of spam blocked? =
 
