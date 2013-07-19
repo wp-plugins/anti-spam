@@ -24,6 +24,8 @@ Anti-spam plugin blocks spam in comments automatically, invisibly for users and 
 Plugin is easy to use: just install it and it just works.
 Need [more info about the plugin](http://wordpress.org/plugins/anti-spam/faq/)?
 
+Important: Anti-spam plugin works with Jetpack comments.
+
 = Useful: =
 * ["activetab" - responsive clean theme](http://wordpress.org/themes/activetab "responsive clean theme")
 * ["Page-list" - show list of pages with shortcodes](http://wordpress.org/plugins/page-list/ "list of pages with shortcodes")
