@@ -3,7 +3,7 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 1.7
+Version: 1.8
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv2 or later
@@ -15,7 +15,7 @@ $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed
 // trackbacks almost not used by users, but mostly used by spammers; pingbacks are always enabled
 // more about the difference between trackback and pingback - http://web-profile.com.ua/web/trackback-vs-pingback/
 
-$antispam_version = '1.7';
+$antispam_version = '1.8';
 
 
 if ( ! function_exists( 'antispam_scripts_styles_init' ) ) :
@@ -35,14 +35,14 @@ if ( ! function_exists( 'antispam_form_part' ) ) :
 		if ( ! is_user_logged_in() ) { // add anti-spam fields only for not logged in users
 			$antispam_form_part = '
 	<p class="comment-form-anti-spam" style="clear:both;">
-		<label for="anti-spam-q">Current <span style="display:none;">month</span> <span style="display:inline;">ye@r</span> <span style="display:none;">day</span></label> <span class="required">*</span>
+		<strong>Current <span style="display:none;">month</span> <span style="display:inline;">ye@r</span> <span style="display:none;">day</span></strong> <span class="required">*</span>
 		<input type="hidden" name="anti-spam-a" id="anti-spam-a" value="'.date('Y').'" />
 		<input type="text" name="anti-spam-q" id="anti-spam-q" size="30" value="1980" />
 	</p>
 	'; // question (hidden with js) [aria-required="true" required="required"]
 			$antispam_form_part .= '
 	<p class="comment-form-anti-spam-2" style="display:none;">
-		<label for="anti-spam-e-email-url">Leave this field empty</label> <span class="required">*</span>
+		<strong>Leave this field empty</strong> <span class="required">*</span>
 		<input type="text" name="anti-spam-e-email-url" id="anti-spam-e-email-url" size="30" value=""/>
 	</p>
 	'; // empty field (hidden with css)

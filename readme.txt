@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.7
+Tested up to: 3.5.2
+Stable tag: 1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,9 +25,9 @@ Plugin is easy to use: just install it and it just works.
 Need [more info about the plugin](http://wordpress.org/plugins/anti-spam/faq/)?
 
 = Useful: =
+* ["activetab" - responsive clean theme](http://wordpress.org/themes/activetab "responsive clean theme")
 * ["Page-list" - show list of pages with shortcodes](http://wordpress.org/plugins/page-list/ "list of pages with shortcodes")
-* ["Iframe" - embed iframe with shortcode](http://wordpress.org/plugins/iframe/ "embed iframe")
-* ["activetab" - responsive light theme](http://wordpress.org/themes/activetab "responsive light theme")
+* ["Filenames to latin" - sanitize filenames to latin during upload](http://wordpress.org/plugins/filenames-to-latin/ "sanitize filenames to latin")
 
 == Installation ==
 
@@ -35,6 +35,12 @@ Need [more info about the plugin](http://wordpress.org/plugins/anti-spam/faq/)?
 2. enjoy life without spam in comments
 
 == Frequently Asked Questions ==
+
+= Does Anti-spam plugin works with Jetpack comments =
+
+Anti-spam plugin does not work with [Jetpack comments](http://jetpack.me/support/comments/).
+Jetpack comments use iframe to insert comment form and it is impossible to access it via javascript because of security reasons.
+If you use Jetpack comments - you should find some other plugin to block spam.
 
 = How does Anti-spam plugin work? =
 
@@ -77,6 +83,10 @@ Do not order products from spam. If spam will be less effective than spammers wi
 
 
 == Changelog ==
+
+= 1.8 - 2013-07-19 =
+* removed labels from plugin markup because some themes try to get text from labels and insert it into inputs like placeholders (what cause an error)
+* added info to FAQ section that Anti-spam plugin does not work with Jetpack comments
 
 = 1.7 - 2013-05-31 =
 * if site has caching plugin enabled and cache is not cleared or if theme does not use 'comment_form' action - Anti-spam plugin does not worked; so now whole input added via javascript if it does not exist in html
