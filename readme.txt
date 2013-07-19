@@ -53,7 +53,7 @@ Edit [anti-spam.php](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/a
 
 Anti-spam plugin does not work with [Jetpack comments](http://jetpack.me/support/comments/).
 Jetpack comments use iframe to insert comment form and it is impossible to access it via javascript because of security reasons.
-If you use Jetpack comments - you should find some other plugin to block spam. I recommend [Akismet](http://wordpress.org/plugins/akismet/).
+If you use Jetpack comments - you should find some other plugin to block spam. I recommend to use [Akismet](http://wordpress.org/plugins/akismet/).
 
 = What is the percentage of spam blocked? =
 
