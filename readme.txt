@@ -52,7 +52,8 @@ Edit [anti-spam.php](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/a
 
 Anti-spam plugin does not work with [Jetpack Comments](http://jetpack.me/support/comments/).
 Jetpack Comments use iframe to insert comment form and it is impossible to access it via javascript because of security reasons.
-If you use Jetpack Comments - you should find some other plugin to block spam. I could try [Akismet](http://wordpress.org/plugins/akismet/), it is compatible with Jetpack Comments.
+If you use Jetpack Comments - you should find some other plugin to block spam.
+You could try [Akismet](http://wordpress.org/plugins/akismet/), it is compatible with Jetpack Comments.
 
 = Does Anti-spam plugin work with ajax comments forms? =
 
