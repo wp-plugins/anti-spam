@@ -24,7 +24,6 @@ Anti-spam plugin blocks spam in comments automatically, invisibly for users and 
 Plugin is easy to use: just install it and it just works.
 Need [more info about the plugin](http://wordpress.org/plugins/anti-spam/faq/)?
 
-Important: Anti-spam plugin does not work with Jetpack Comments!
 
 = Useful: =
 * ["activetab" - responsive clean theme](http://wordpress.org/themes/activetab "responsive clean theme")
@@ -54,6 +53,11 @@ Edit [anti-spam.php](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/a
 Anti-spam plugin does not work with [Jetpack Comments](http://jetpack.me/support/comments/).
 Jetpack Comments use iframe to insert comment form and it is impossible to access it via javascript because of security reasons.
 If you use Jetpack Comments - you should find some other plugin to block spam. I could try [Akismet](http://wordpress.org/plugins/akismet/), it is compatible with Jetpack Comments.
+
+= Does Anti-spam plugin work with ajax comments forms? =
+
+Some themes, for example [p2](http://wordpress.org/themes/p2), use ajax to submit comment.
+But if the script of the theme will not submit extra Anti-spam fields - so Anti-spam plugin will not work.
 
 = What is the percentage of spam blocked? =
 
