@@ -24,6 +24,8 @@ Anti-spam plugin blocks spam in comments automatically, invisibly for users and 
 Plugin is easy to use: just install it and it just works.
 Need [more info about the plugin](http://wordpress.org/plugins/anti-spam/faq/)?
 
+After installing the Anti-spam plugin **try to submit a comment on your site being logged out**.
+If you get an error - you may check the solution in the [Support section](http://wordpress.org/support/plugin/anti-spam) or submit a new topic with detailed description of your problem.
 
 = Useful: =
 * ["activetab" - responsive clean theme](http://wordpress.org/themes/activetab "responsive clean theme")
