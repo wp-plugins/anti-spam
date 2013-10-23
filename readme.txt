@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
-Tested up to: 3.5.2
-Stable tag: 1.8
+Tested up to: 3.6.1
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,9 @@ Do not order products from spam. If spam will be less effective than spammers wi
 
 
 == Changelog ==
+
+= 1.9 - 2013-10-23 =
+* change the html structure
 
 = 1.8 - 2013-07-19 =
 * removed labels from plugin markup because some themes try to get text from labels and insert it into inputs like placeholders (what cause an error)
