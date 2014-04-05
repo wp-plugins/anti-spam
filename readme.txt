@@ -33,7 +33,7 @@ If you get an error - you may check the solution in the [Support section](http:/
 = Useful: =
 * ["activetab" - responsive clean theme](http://wordpress.org/themes/activetab "responsive clean and light theme")
 * ["Page-list" - show list of pages with shortcodes](http://wordpress.org/plugins/page-list/ "list of pages with shortcodes")
-* ["Filenames to latin" - sanitize filenames to latin during upload](http://wordpress.org/plugins/filenames-to-latin/ "sanitize filenames to latin")
+* ["Security-protection" - blocks brute-force attacks](http://wordpress.org/plugins/security-protection/ "stops brute-force attacks")
 
 == Installation ==
 
