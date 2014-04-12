@@ -16,7 +16,7 @@ No spam in comments. No captcha.
 [Donate](http://web-profile.com.ua/donate/ "Support the development") |
 [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169 "Anti-spam Pro")
 
-**Why humans should prove that they are humans? Lets bots prove that they are not bots!**
+**Why humans should prove that they are humans by filling captchas? Lets bots prove that they are not bots with adding javascript to their user-agents!**
 
 Anti-spam plugin blocks spam in comments automatically, invisibly for users and for admins.
 
@@ -44,7 +44,13 @@ If you get an error - you may check the solution in the [Support section](http:/
 
 == Frequently Asked Questions ==
 
-= How does Anti-spam plugin work? =
+= How does Anti-spam plugin work ? =
+
+The blocking algorithm is based on 2 methods: 'invisible js-captcha' and 'invisible input trap'.
+The 'invisible js-captcha' method is based on fact that bots does not have javascript on their user-agents.
+The 'invisible input trap' method is based on fact that almost all the bots will fill inputs with name 'email' or 'url'.
+
+= How does Anti-spam plugin work in details? =
 
 Two extra hidden fields are added to comments form. First field is the question about the current year. Second field should be empty.
 If the user visits site, than first field is answered automatically with javascript, second field left blank and both fields are hidden by javascript and css and invisible for the user.
