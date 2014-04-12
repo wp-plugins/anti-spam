@@ -3,7 +3,7 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
-Tested up to: 3.8.1
+Tested up to: 3.9
 Stable tag: 2.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -15,6 +15,8 @@ No spam in comments. No captcha.
 [Anti-spam](http://web-profile.com.ua/wordpress/plugins/anti-spam/ "Plugin page") |
 [Donate](http://web-profile.com.ua/donate/ "Support the development") |
 [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169 "Anti-spam Pro")
+
+**Why humans should prove that they are humans? Lets bots prove that they are not bots :)**
 
 Anti-spam plugin blocks spam in comments automatically, invisibly for users and for admins.
 
