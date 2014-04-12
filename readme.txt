@@ -16,7 +16,7 @@ No spam in comments. No captcha.
 [Donate](http://web-profile.com.ua/donate/ "Support the development") |
 [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169 "Anti-spam Pro")
 
-**Why humans should prove that they are humans? Lets bots prove that they are not bots :)**
+**Why humans should prove that they are humans? Lets bots prove that they are not bots!**
 
 Anti-spam plugin blocks spam in comments automatically, invisibly for users and for admins.
 
