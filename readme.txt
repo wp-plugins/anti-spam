@@ -12,9 +12,9 @@ No spam in comments. No captcha.
 
 == Description ==
 
+[Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169 "Upgrade to Pro Version") |
 [Anti-spam](http://web-profile.com.ua/wordpress/plugins/anti-spam/ "Plugin page") |
-[Donate](http://web-profile.com.ua/donate/ "Support the development") |
-[Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169 "Anti-spam Pro")
+[Donate](http://web-profile.com.ua/donate/ "Support the development")
 
 **Why humans should prove that they are humans by filling captchas? Lets bots prove that they are not bots with adding javascript to their user-agents!**
 
@@ -33,9 +33,9 @@ After installing the Anti-spam plugin **try to submit a comment on your site bei
 If you get an error - you may check the solution in the [Support section](http://wordpress.org/support/plugin/anti-spam) or submit a new topic with detailed description of your problem.
 
 = Useful: =
-* ["activetab" - responsive clean theme](http://wordpress.org/themes/activetab "responsive clean and light theme")
-* ["Page-list" - show list of pages with shortcodes](http://wordpress.org/plugins/page-list/ "list of pages with shortcodes")
 * ["Security-protection" - blocks brute-force attacks](http://wordpress.org/plugins/security-protection/ "stops brute-force attacks")
+* ["Page-list" - show list of pages with shortcodes](http://wordpress.org/plugins/page-list/ "list of pages with shortcodes")
+* ["activetab" - responsive clean theme](http://wordpress.org/themes/activetab "responsive clean and light theme")
 
 == Installation ==
 
