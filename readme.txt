@@ -12,7 +12,7 @@ No spam in comments. No captcha.
 
 == Description ==
 
-[Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169 "Upgrade to Pro Version") |
+[Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro") |
 [Anti-spam](http://web-profile.com.ua/wordpress/plugins/anti-spam/ "Plugin page") |
 [Donate](http://web-profile.com.ua/donate/ "Support the development")
 
@@ -24,7 +24,7 @@ Anti-spam plugin blocks spam in comments automatically, invisibly for users and 
 * **no moderation queues**, because spam is not administrators' problem
 * **no options**, because it is great to forget about spam completely
 
-If you need more powerful and extended version with options you may try [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169).
+If you need more powerful and extended version with options you may try [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly).
 
 Plugin is easy to use: just install it and it just works.
 Need [more info about the plugin](http://wordpress.org/plugins/anti-spam/faq/)?

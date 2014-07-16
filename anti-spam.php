@@ -163,7 +163,7 @@ if ( ! function_exists( 'antispam_plugin_meta' ) ) :
 		if ( strpos( $file, 'anti-spam.php' ) !== false ) {
 			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/wordpress/plugins/anti-spam/" title="Plugin page">Anti-spam</a>' ) );
 			$links = array_merge( $links, array( '<a href="http://web-profile.com.ua/donate/" title="Support the development">Donate</a>' ) );
-			$links = array_merge( $links, array( '<a href="http://codecanyon.net/item/antispam-pro/6491169" title="Upgrade to Pro Version">Anti-spam Pro</a>' ) );
+			$links = array_merge( $links, array( '<a href="http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly" title="Upgrade to Pro">Anti-spam Pro</a>' ) );
 		}
 		return $links;
 	}
