@@ -24,7 +24,7 @@ Anti-spam plugin blocks spam in comments automatically, invisibly for users and 
 * **no moderation queues**, because spam is not administrators' problem
 * **no options**, because it is great to forget about spam completely
 
-If you need more powerful and extended version with options you may try [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly).
+If you need more powerful and extended version with options you may try [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro").
 
 Plugin is easy to use: just install it and it just works.
 Need [more info about the plugin](http://wordpress.org/plugins/anti-spam/faq/)?
