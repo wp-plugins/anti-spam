@@ -9,7 +9,8 @@ wordpress.org/plugins/anti-spam/
 	function anti_spam_init() {
 		$('.comment-form-ant-spm, .comment-form-ant-spm-2').hide(); // hide inputs from users
 		var answer = $('.comment-form-ant-spm input#ant-spm-a').val(); // get answer
-		$('.comment-form-ant-spm input#ant-spm-q').val( answer ); // set answer into other input instead of user
+		$('.comment-form-ant-spm input#ant-spm-q').val(answer); // set answer into other input instead of user
+		$('.comment-form-ant-spm-2 input#ant-spm-e-email-url').val(''); // clear value of the empty input because some themes are adding some value for all inputs
 
 		var current_date = new Date();
 		var current_year = current_date.getFullYear();

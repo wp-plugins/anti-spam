@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 2.1
+Stable tag: 2.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -33,9 +33,9 @@ After installing the Anti-spam plugin **try to submit a comment on your site bei
 If you get an error - you may check the solution in the [Support section](http://wordpress.org/support/plugin/anti-spam) or submit a new topic with detailed description of your problem.
 
 = Useful: =
+* [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro")
 * ["Security-protection" - blocks brute-force attacks](http://wordpress.org/plugins/security-protection/ "stops brute-force attacks")
 * ["Page-list" - show list of pages with shortcodes](http://wordpress.org/plugins/page-list/ "list of pages with shortcodes")
-* ["activetab" - responsive clean theme](http://wordpress.org/themes/activetab "responsive clean and light theme")
 
 == Installation ==
 
@@ -67,6 +67,14 @@ Anti-spam plugin does not work with [Jetpack Comments](http://jetpack.me/support
 Jetpack Comments use iframe to insert comment form and it is impossible to access it via javascript because of security reasons.
 If you use Jetpack Comments - you should find some other plugin to block spam.
 You could try [Akismet](http://wordpress.org/plugins/akismet/), it is compatible with Jetpack Comments.
+
+= Does Anti-spam plugin block spam from Contact or other forms? =
+
+Anti-spam plugin blocks spam only in comments form section and does not block spam from any other forms on site.
+
+= Does Anti-spam plugin work with bbPress? =
+
+No.
 
 = Does Anti-spam plugin work with ajax comments forms? =
 
@@ -103,6 +111,10 @@ Do not order products from spam. If spam will be less effective than spammers wi
 
 
 == Changelog ==
+
+= 2.2 - 2014-08-03 =
+* clear value of the empty input because some themes are adding some value for all inputs
+* updated FAQ section
 
 = 2.1 - 2014-02-15 =
 * add support for comments forms loaded via ajax
