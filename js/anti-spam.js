@@ -16,15 +16,15 @@ wordpress.org/plugins/anti-spam/
 		var current_year = current_date.getFullYear();
 
 		if ( $('#comments form input#ant-spm-q').length == 0 ) { // anti-spam input does not exist (could be because of cache or because theme does not use 'comment_form' action)
-			$('#comments form').append('<input type="hidden" name="ant-spm-q" id="ant-spm-q" value="'+current_year+'" />'); // add whole input with answer via javascript to comment form
+			$('#comments form').append('<input type="hidden" name="ant-spm-q" id="ant-spm-q" value="'+current_year+'" />'); // add whole input with answer via js to comment form
 		}
 
 		if ( $('#respond form input#ant-spm-q').length == 0 ) { // similar, just in case (used because user could bot have #comments)
-			$('#respond form').append('<input type="hidden" name="ant-spm-q" id="ant-spm-q" value="'+current_year+'" />'); // add whole input with answer via javascript to comment form
+			$('#respond form').append('<input type="hidden" name="ant-spm-q" id="ant-spm-q" value="'+current_year+'" />'); // add whole input with answer via js to comment form
 		}
 
 		if ( $('form#commentform input#ant-spm-q').length == 0 ) { // similar, just in case (used because user could bot have #respond)
-			$('form#commentform').append('<input type="hidden" name="ant-spm-q" id="ant-spm-q" value="'+current_year+'" />'); // add whole input with answer via javascript to comment form
+			$('form#commentform').append('<input type="hidden" name="ant-spm-q" id="ant-spm-q" value="'+current_year+'" />'); // add whole input with answer via js to comment form
 		}
 	}
 

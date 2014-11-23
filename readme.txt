@@ -3,8 +3,8 @@ Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 2.2
+Tested up to: 4.0
+Stable tag: 2.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -111,6 +111,10 @@ Do not order products from spam. If spam will be less effective than spammers wi
 
 
 == Changelog ==
+
+= 2.3 - 2014-11-23 =
+* enqueue script only for pages with comments form and in the footer (thanks to dougvdotcom)
+* clean up code
 
 = 2.2 - 2014-08-03 =
 * clear value of the empty input because some themes are adding some value for all inputs
