@@ -3,7 +3,7 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 2.3
+Version: 2.4
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
@@ -15,7 +15,7 @@ $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed
 // trackbacks almost not used by users, but mostly used by spammers; pingbacks are always enabled
 // more about the difference between trackback and pingback - http://web-profile.com.ua/web/trackback-vs-pingback/
 
-$antispam_version = '2.3';
+$antispam_version = '2.4';
 
 
 if ( ! function_exists('antispam_enqueue_script') ) :
@@ -33,15 +33,15 @@ if ( ! function_exists('antispam_form_part') ) :
 	function antispam_form_part() {
 		global $antispam_version;
 		if ( ! is_user_logged_in() ) { // add anti-spam fields only for not logged in users
-			echo '<p class="comment-form-ant-spm" style="clear:both;">
+			echo '<p class="comment-form-antspm" style="clear: both;">
 					<strong>Current ye@r</strong> <span class="required">*</span>
-					<input type="hidden" name="ant-spm-a" id="ant-spm-a" value="'.date('Y').'" />
-					<input type="text" name="ant-spm-q" id="ant-spm-q" size="30" value="'.$antispam_version.'" />
+					<input type="hidden" name="antspm-a" class="antspm-a" value="'.date('Y').'" />
+					<input type="text" name="antspm-q" class="antspm-q" value="'.$antispam_version.'" />
 				</p>'; // question (hidden with js) [required="required"]
 
-			echo '<p class="comment-form-ant-spm-2" style="display:none;">
+			echo '<p class="comment-form-antspm-2" style="display: none;">
 					<strong>Leave this field empty</strong>
-					<input type="text" name="ant-spm-e-email-url" id="ant-spm-e-email-url" size="30" value="" />
+					<input type="text" name="antspm-e-email-url" class="antspm-e-email-url" value="" />
 				</p>'; // empty field (hidden with css)
 		}
 	}
@@ -95,18 +95,18 @@ if ( ! function_exists('antispam_check_comment') ) :
 		if ( ! is_user_logged_in() && $comment_type != 'pingback' && $comment_type != 'trackback' ) { // logged in user is not a spammer
 			$spam_flag = false;
 
-			if ( array_key_exists('ant-spm-q', $_POST) && trim($_POST['ant-spm-q']) != date('Y') ) { // answer is wrong - maybe spam
+			if ( array_key_exists('antspm-q', $_POST) && trim($_POST['antspm-q']) != date('Y') ) { // answer is wrong - maybe spam
 				$spam_flag = true;
-				if ( empty( $_POST['ant-spm-q'] ) ) { // empty answer - maybe spam
-					$antispam_error_message .= 'Error: empty answer. ['.$_POST['ant-spm-q'].']<br> ';
+				if ( empty( $_POST['antspm-q'] ) ) { // empty answer - maybe spam
+					$antispam_error_message .= 'Error: empty answer. ['.$_POST['antspm-q'].']<br> ';
 				} else {
-					$antispam_error_message .= 'Error: answer is wrong. ['.$_POST['ant-spm-q'].']<br> ';
+					$antispam_error_message .= 'Error: answer is wrong. ['.$_POST['antspm-q'].']<br> ';
 				}
 			}
 
-			if ( ! empty( $_POST['ant-spm-e-email-url'] ) ) { // field is not empty - maybe spam
+			if ( ! empty( $_POST['antspm-e-email-url'] ) ) { // field is not empty - maybe spam
 				$spam_flag = true;
-				$antispam_error_message .= 'Error: field should be empty. ['.$_POST['ant-spm-e-email-url'].']<br> ';
+				$antispam_error_message .= 'Error: field should be empty. ['.$_POST['antspm-e-email-url'].']<br> ';
 			}
 
 			if ( $spam_flag ) { // if we have spam

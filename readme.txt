@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 2.3
+Stable tag: 2.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -111,6 +111,9 @@ Do not order products from spam. If spam will be less effective than spammers wi
 
 
 == Changelog ==
+
+= 2.4 - 2014-11-25 =
+* update input names
 
 = 2.3 - 2014-11-23 =
 * enqueue script only for pages with comments form and in the footer (thanks to dougvdotcom)
