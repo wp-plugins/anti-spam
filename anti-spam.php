@@ -3,7 +3,7 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 2.5
+Version: 2.6
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
@@ -15,17 +15,17 @@ $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed
 // trackbacks almost not used by users, but mostly used by spammers; pingbacks are always enabled
 // more about the difference between trackback and pingback - http://web-profile.com.ua/web/trackback-vs-pingback/
 
-$antispam_version = '2.5';
+$antispam_version = '2.6';
 
 
 if ( ! function_exists('antispam_enqueue_script') ) :
 	function antispam_enqueue_script() {
 		global $antispam_version;
-		if (is_singular() && comments_open() && get_option('thread_comments')) { // load script only for pages with comments form
-			wp_enqueue_script('anti-spam-script', plugins_url('/js/anti-spam.js', __FILE__), array('jquery'), $antispam_version, true);
+		if (!is_admin()) {
+			wp_enqueue_script('anti-spam-script', plugins_url('/js/anti-spam.js', __FILE__), array('jquery'), $antispam_version);
 		}
 	}
-	add_action('wp_enqueue_scripts', 'antispam_enqueue_script');
+	add_action('init', 'antispam_enqueue_script');
 endif; // end of antispam_enqueue_script()
 
 
@@ -64,9 +64,9 @@ if ( ! function_exists('antispam_check_comment') ) :
 			$antispam_message_spam_info  = 'Spam for post: "'.$post->post_title.'"' . "\r\n";
 			$antispam_message_spam_info .= get_permalink($comment->comment_post_ID) . "\r\n\r\n";
 
-			$antispam_message_spam_info .= 'IP : ' . $_SERVER['REMOTE_ADDR'] . "\r\n";
-			$antispam_message_spam_info .= 'User agent : ' . $_SERVER['HTTP_USER_AGENT'] . "\r\n";
-			$antispam_message_spam_info .= 'Referer : ' . $_SERVER['HTTP_REFERER'] . "\r\n\r\n";
+			$antispam_message_spam_info .= 'IP: ' . $_SERVER['REMOTE_ADDR'] . "\r\n";
+			$antispam_message_spam_info .= 'User agent: ' . $_SERVER['HTTP_USER_AGENT'] . "\r\n";
+			$antispam_message_spam_info .= 'Referer: ' . $_SERVER['HTTP_REFERER'] . "\r\n\r\n";
 
 			$antispam_message_spam_info .= 'Comment data:'."\r\n"; // lets see what comment data spammers try to submit
 			foreach ($commentdata as $key => $value) {
