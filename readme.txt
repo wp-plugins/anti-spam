@@ -77,7 +77,7 @@ Every comment will have +1 spam point for each truthy statement below:
 * comment contains rel="nofollow" code
 * comment contains [/url] code
 
-If the comment will have 3 or more spam points - the comment will be blocked because it is spam.
+If the comment will have more than 3 spam points - the comment will be blocked because it is spam.
 
 = How to test what spam comments are rejected? =
 

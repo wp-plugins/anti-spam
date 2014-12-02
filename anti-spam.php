@@ -21,7 +21,7 @@ $antispam_settings = array(
 	'allow_trackbacks' => $antispam_allow_trackbacks,
 	'version' => '3.0',
 	'admin_email' => get_option('admin_email'),
-	'max_spam_points' => 2, // if more - it is spam
+	'max_spam_points' => 3, // if more - it is spam
 	'max_links_number' => 2, // if more - +1 spam point
 	'max_comment_length' => 2000 // if more - +1 spam point
 );
