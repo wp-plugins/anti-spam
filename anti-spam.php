@@ -3,7 +3,7 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 3.0
+Version: 3.1
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
@@ -19,7 +19,7 @@ $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed
 $antispam_settings = array(
 	'send_spam_comment_to_admin' => $antispam_send_spam_comment_to_admin,
 	'allow_trackbacks' => $antispam_allow_trackbacks,
-	'version' => '3.0',
+	'version' => '3.1',
 	'admin_email' => get_option('admin_email'),
 	'max_spam_points' => 3, // if more - it is spam
 	'max_links_number' => 2, // if more - +1 spam point
@@ -125,34 +125,34 @@ if ( ! function_exists('antispam_check_comment')):
 				$antispam_error_message .= 'Info: COOKIE array is empty. +1 spam point.<br> '.$rn;
 			}
 
-			if ( ! empty($commentdata[comment_author_url])) { // probably spam
+			if ( ! empty($commentdata['comment_author_url'])) { // probably spam
 				$spam_points += 1;
 				$antispam_error_message .= 'Info: URL field is not empty. +1 spam point.<br> '.$rn;
 			}
 
-			$links_count = substr_count($commentdata[comment_content], 'http');
+			$links_count = substr_count($commentdata['comment_content'], 'http');
 			if ($links_count > $antispam_settings['max_links_number']) { // probably spam
 				$spam_points += 1;
 				$antispam_error_message .= 'Info: comment contains too many links ['.$links_count.' links; max = '.$antispam_settings['max_links_number'].']. +1 spam point.<br> '.$rn;
 			}
 
-			if (strpos($commentdata[comment_content], '</') !== false) { // probably spam
+			if (strpos($commentdata['comment_content'], '</') !== false) { // probably spam
 				$spam_points += 1;
 				$antispam_error_message .= 'Info: comment contains html. +1 spam point.<br> '.$rn;
 			}
 
-			$comment_length = strlen($commentdata[comment_content]);
+			$comment_length = strlen($commentdata['comment_content']);
 			if ($comment_length > $antispam_settings['max_comment_length']) { // probably spam
 				$spam_points += 1;
 				$antispam_error_message .= 'Info: comment is too long ['.$comment_length.' chars; max = '.$antispam_settings['max_comment_length'].']. +1 spam point.<br> '.$rn;
 			}
 
-			if (strpos($commentdata[comment_content], 'rel="nofollow"') !== false) { // probably spam
+			if (strpos($commentdata['comment_content'], 'rel="nofollow"') !== false) { // probably spam
 				$spam_points += 1;
 				$antispam_error_message .= 'Info: comment contains rel="nofollow" code. +1 spam point.<br> '.$rn;
 			}
 
-			if (strpos($commentdata[comment_content], '[/url]') !== false) { // probably spam
+			if (strpos($commentdata['comment_content'], '[/url]') !== false) { // probably spam
 				$spam_points += 1;
 				$antispam_error_message .= 'Info: comment contains [/url] code. +1 spam point.<br> '.$rn;
 			}
