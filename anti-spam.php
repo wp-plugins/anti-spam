@@ -3,7 +3,7 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 3.1
+Version: 3.2
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
@@ -15,23 +15,20 @@ $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed
 // trackbacks almost not used by users, but mostly used by spammers; pingbacks are always enabled
 // more about the difference between trackback and pingback - http://web-profile.com.ua/web/trackback-vs-pingback/
 
+define('ANTISPAM_VERSION', '3.2');
 
 $antispam_settings = array(
 	'send_spam_comment_to_admin' => $antispam_send_spam_comment_to_admin,
 	'allow_trackbacks' => $antispam_allow_trackbacks,
-	'version' => '3.1',
-	'admin_email' => get_option('admin_email'),
-	'max_spam_points' => 3, // if more - it is spam
-	'max_links_number' => 2, // if more - +1 spam point
-	'max_comment_length' => 2000 // if more - +1 spam point
+	'version' => ANTISPAM_VERSION,
+	'admin_email' => get_option('admin_email')
 );
 
 
 if ( ! function_exists('antispam_enqueue_script')):
 	function antispam_enqueue_script() {
-		global $antispam_settings;
 		if (is_singular() && comments_open()) { // load script only for pages with comments form
-			wp_enqueue_script('anti-spam-script', plugins_url('/js/anti-spam-3.0.js', __FILE__), array('jquery'), $antispam_settings['version'], true);
+			wp_enqueue_script('anti-spam-script', plugins_url('/js/anti-spam-3.2.js', __FILE__), array('jquery'), null, true);
 		}
 	}
 	add_action('wp_enqueue_scripts', 'antispam_enqueue_script');
@@ -61,7 +58,6 @@ endif; // end of antispam_form_part()
 if ( ! function_exists('antispam_check_comment')):
 	function antispam_check_comment($commentdata) {
 		global $antispam_settings;
-		$spam_points = 0;
 		$rn = "\r\n"; // .chr(13).chr(10)
 
 		extract($commentdata);
@@ -119,49 +115,7 @@ if ( ! function_exists('antispam_check_comment')):
 				$antispam_error_message .= 'Error: field should be empty. ['.$_POST['antspm-e-email-url-website'].']<br> '.$rn;
 			}
 
-			// if comment passed general checks lets add extra check
-			if (empty($_COOKIE)) { // probably spam
-				$spam_points += 1;
-				$antispam_error_message .= 'Info: COOKIE array is empty. +1 spam point.<br> '.$rn;
-			}
-
-			if ( ! empty($commentdata['comment_author_url'])) { // probably spam
-				$spam_points += 1;
-				$antispam_error_message .= 'Info: URL field is not empty. +1 spam point.<br> '.$rn;
-			}
-
-			$links_count = substr_count($commentdata['comment_content'], 'http');
-			if ($links_count > $antispam_settings['max_links_number']) { // probably spam
-				$spam_points += 1;
-				$antispam_error_message .= 'Info: comment contains too many links ['.$links_count.' links; max = '.$antispam_settings['max_links_number'].']. +1 spam point.<br> '.$rn;
-			}
-
-			if (strpos($commentdata['comment_content'], '</') !== false) { // probably spam
-				$spam_points += 1;
-				$antispam_error_message .= 'Info: comment contains html. +1 spam point.<br> '.$rn;
-			}
-
-			$comment_length = strlen($commentdata['comment_content']);
-			if ($comment_length > $antispam_settings['max_comment_length']) { // probably spam
-				$spam_points += 1;
-				$antispam_error_message .= 'Info: comment is too long ['.$comment_length.' chars; max = '.$antispam_settings['max_comment_length'].']. +1 spam point.<br> '.$rn;
-			}
-
-			if (strpos($commentdata['comment_content'], 'rel="nofollow"') !== false) { // probably spam
-				$spam_points += 1;
-				$antispam_error_message .= 'Info: comment contains rel="nofollow" code. +1 spam point.<br> '.$rn;
-			}
-
-			if (strpos($commentdata['comment_content'], '[/url]') !== false) { // probably spam
-				$spam_points += 1;
-				$antispam_error_message .= 'Info: comment contains [/url] code. +1 spam point.<br> '.$rn;
-			}
-
-			if ($spam_points > 0) {
-				$antispam_error_message .= 'Total spam points = '.$spam_points.' [max = '.$antispam_settings['max_spam_points'].']<br> '.$rn;
-			}
-
-			if ($spam_flag || $spam_points > $antispam_settings['max_spam_points']) { // it is spam
+			if ($spam_flag) { // it is spam
 				$antispam_error_message .= '<strong>Comment was blocked because it is spam.</strong><br> ';
 				if ($antispam_settings['send_spam_comment_to_admin']) { // if sending email to admin is enabled
 					$antispam_subject = 'Spam comment on site ['.get_bloginfo('name').']'; // email subject

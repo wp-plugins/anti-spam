@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 3.1
+Stable tag: 3.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -47,7 +47,7 @@ If you get an error - you may check the solution in the [Support section](http:/
 
 = How does Anti-spam plugin work? =
 
-The blocking algorithm is based on 3 methods: 'invisible js-captcha', 'invisible input trap' and 'spam points'.
+The blocking algorithm is based on 2 methods: 'invisible js-captcha' and 'invisible input trap'.
 
 = How does 'invisible js-captcha' method work? =
 
@@ -64,20 +64,6 @@ Extra hidden field is added to comments form.
 This field is hidden for the user and user will not fill it.
 But this field is visible for the spammer.
 If the spammer will fill this trap-field with anything - the comment will be blocked because it is spam.
-
-= How does 'spam points' method work? =
-
-Every comment will have +1 spam point for each truthy statement below:
-
-* empty COOKIE array
-* URL field is not empty
-* comment contains too many links (3 or more)
-* comment contains html
-* comment is too long (more than 2000 chars)
-* comment contains rel="nofollow" code
-* comment contains [/url] code
-
-If the comment will have more than 3 spam points - the comment will be blocked because it is spam.
 
 = How to test what spam comments are rejected? =
 
@@ -106,7 +92,8 @@ But if the script of the theme will not submit extra Anti-spam fields - so Anti-
 
 = What is the percentage of spam blocked? =
 
-Anti-spam plugin blocks more than 99.5% of spam messages.
+Anti-spam plugin blocks about 99.9% of automatic spam messages (sent by spam-bots via post requests).
+Anti-spam plugin will pass the messages which were submitted by spammers manually via browser. But such messages happens very rarely.
 
 = What about trackback spam? =
 
@@ -134,6 +121,10 @@ Do not order products from spam. If spam will be less effective than spammers wi
 
 
 == Changelog ==
+= 3.2 - 2014-12-05 =
+* added ANTISPAM_VERSION constant (thanks to jumbo)
+* removed 'spam points' algorithm because it is not needed
+
 = 3.1 - 2014-12-04 =
 * remove log notices
 
