@@ -165,7 +165,7 @@ function antispam_admin_notice() {
 		$blocked_total = $antispam_stats['blocked_total'];
 		?>
 		<div class="update-nag">
-			<p>
+			<p style="margin: 0;">
 				<?php echo $blocked_total; ?> spam comments were blocked by <a href="http://wordpress.org/plugins/anti-spam/">Anti-spam</a> plugin so far.
 				<a href="http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly" title="Anti-spam Pro">Upgrade to Pro</a>.
 			</p>
