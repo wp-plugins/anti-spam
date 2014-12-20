@@ -40,10 +40,10 @@ function antispam_display_screen_option() {
 		?>
 		<script>
 			jQuery(function($){
-				$('.antispam_screen_options_group').insertAfter('#screen-options-wrap');
+				$('.antispam_screen_options_group').insertAfter('#screen-options-wrap #adv-settings');
 			});
 		</script>
-		<form method="post" class="antispam_screen_options_group" style="padding: 5px 20px 12px 20px;">
+		<form method="post" class="antispam_screen_options_group" style="padding: 20px 0 5px 0;">
 			<input type="hidden" name="antispam_option_submit" value="1" />
 			<label>
 				<input name="antispam_info_visibility" type="checkbox" value="1" <?php echo $checked; ?> />
