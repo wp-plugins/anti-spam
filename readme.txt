@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 3.3
+Stable tag: 3.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -74,7 +74,8 @@ If the spammer will fill this trap-field with anything - the comment will be blo
 
 You may enable sending all rejected spam comments to admin email.
 Edit [anti-spam.php](http://plugins.trac.wordpress.org/browser/anti-spam/trunk/anti-spam.php) file and find "$antispam_send_spam_comment_to_admin" and make it "true".
-And also plugin adds total blocked spam counter to admin comments section.
+You can also find the info block with total spam blocked counter in the admin comments section.
+You can hide or show this info block in the "Screen Options" section. The info block visibility option is saved per user.
 
 = Does plugin block spam from Contact or other forms? =
 
@@ -111,6 +112,9 @@ The plugin is pretty small and easy to read.
 
 
 == Changelog ==
+= 3.4 - 2014-12-20 =
+* added the ability to hide or show info block in the "Screen Options" section
+
 = 3.3 - 2014-12-15 =
 * refactor code structure
 * added blocked spam counter in the comments section

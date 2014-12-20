@@ -3,7 +3,7 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 3.3
+Version: 3.4
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
@@ -15,7 +15,7 @@ $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed
 // trackbacks almost not used by users, but mostly used by spammers; pingbacks are always enabled
 // more about the difference between trackback and pingback - http://web-profile.com.ua/web/trackback-vs-pingback/
 
-define('ANTISPAM_VERSION', '3.3');
+define('ANTISPAM_VERSION', '3.4');
 
 $antispam_settings = array(
 	'send_spam_comment_to_admin' => $antispam_send_spam_comment_to_admin,
@@ -25,11 +25,12 @@ $antispam_settings = array(
 );
 
 include('anti-spam-functions.php');
+include('anti-spam-info.php');
 
 if ( ! function_exists('antispam_enqueue_script')):
 function antispam_enqueue_script() {
 	if (is_singular() && comments_open()) { // load script only for pages with comments form
-		wp_enqueue_script('anti-spam-script', plugins_url('/js/anti-spam-3.3.js', __FILE__), array('jquery'), null, true);
+		wp_enqueue_script('anti-spam-script', plugins_url('/js/anti-spam-3.4.js', __FILE__), array('jquery'), null, true);
 	}
 }
 add_action('wp_enqueue_scripts', 'antispam_enqueue_script');
@@ -155,26 +156,6 @@ if ( ! is_admin()) {
 	add_filter('preprocess_comment', 'antispam_check_comment', 1);
 }
 endif; // end of antispam_check_comment()
-
-
-if ( ! function_exists('antispam_admin_notice')):
-function antispam_admin_notice() {
-	global $pagenow;
-	if ($pagenow == 'edit-comments.php'):
-		$antispam_stats = get_option('antispam_stats', array());
-		$blocked_total = $antispam_stats['blocked_total'];
-		?>
-		<div class="update-nag">
-			<p style="margin: 0;">
-				<?php echo $blocked_total; ?> spam comments were blocked by <a href="http://wordpress.org/plugins/anti-spam/">Anti-spam</a> plugin so far.
-				<a href="http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly" title="Anti-spam Pro">Upgrade to Pro</a>.
-			</p>
-		</div>
-		<?php
-	endif; // end of if($pagenow == 'edit-comments.php')
-}
-add_action('admin_notices', 'antispam_admin_notice');
-endif; // end of antispam_admin_notice()
 
 
 if ( ! function_exists('antispam_plugin_meta')):
