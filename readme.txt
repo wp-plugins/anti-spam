@@ -122,13 +122,13 @@ The plugin is pretty small and easy to read.
 
 = 3.2 - 2014-12-05 =
 * added ANTISPAM_VERSION constant (thanks to jumbo)
-* removed 'spam points' algorithm because it is not needed
+* removed new spam-block algorithm because it is not needed
 
 = 3.1 - 2014-12-04 =
 * remove log notices
 
 = 3.0 - 2014-12-02 =
-* added 'spam points' algorithm
+* added new spam-block algorithm
 * bugfixing
 * enqueue script only for pages with comments form and in the footer (thanks to dougvdotcom)
 * refactor code structure
