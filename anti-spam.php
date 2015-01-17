@@ -9,8 +9,6 @@ Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
 */
 
-defined('BASEPATH') OR exit('No direct script access allowed');
-
 $antispam_send_spam_comment_to_admin = false; // if true, than rejected spam comments will be sent to admin email
 
 $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed

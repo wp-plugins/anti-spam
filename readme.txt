@@ -115,7 +115,6 @@ The plugin is pretty small and easy to read.
 = 3.5 - 2015-01-17 =
 * removed function_exists check because each function has unique prefix
 * removed add_option()
-* added code to each page: defined('BASEPATH') OR exit('No direct script access allowed');
 
 = 3.4 - 2014-12-20 =
 * added the ability to hide or show info block in the "Screen Options" section

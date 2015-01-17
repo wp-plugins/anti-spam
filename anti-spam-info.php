@@ -1,7 +1,5 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
-
 function antispam_admin_notice() {
 	global $pagenow;
 	if ($pagenow == 'edit-comments.php'):
