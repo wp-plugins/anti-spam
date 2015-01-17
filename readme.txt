@@ -4,7 +4,7 @@ Donate link: http://web-profile.com.ua/donate/
 Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
 Requires at least: 3.3
 Tested up to: 4.1
-Stable tag: 3.4
+Stable tag: 3.5
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -112,6 +112,11 @@ The plugin is pretty small and easy to read.
 
 
 == Changelog ==
+= 3.5 - 2015-01-17 =
+* removed function_exists check because each function has unique prefix
+* removed add_option()
+* added code to each page: defined('BASEPATH') OR exit('No direct script access allowed');
+
 = 3.4 - 2014-12-20 =
 * added the ability to hide or show info block in the "Screen Options" section
 

@@ -3,11 +3,13 @@
 Plugin Name: Anti-spam
 Plugin URI: http://wordpress.org/plugins/anti-spam/
 Description: No spam in comments. No captcha.
-Version: 3.4
+Version: 3.5
 Author: webvitaly
 Author URI: http://web-profile.com.ua/wordpress/plugins/
 License: GPLv3
 */
+
+defined('BASEPATH') OR exit('No direct script access allowed');
 
 $antispam_send_spam_comment_to_admin = false; // if true, than rejected spam comments will be sent to admin email
 
@@ -15,7 +17,7 @@ $antispam_allow_trackbacks = false; // if true, than trackbacks will be allowed
 // trackbacks almost not used by users, but mostly used by spammers; pingbacks are always enabled
 // more about the difference between trackback and pingback - http://web-profile.com.ua/web/trackback-vs-pingback/
 
-define('ANTISPAM_VERSION', '3.4');
+define('ANTISPAM_VERSION', '3.5');
 
 $antispam_settings = array(
 	'send_spam_comment_to_admin' => $antispam_send_spam_comment_to_admin,
@@ -27,17 +29,15 @@ $antispam_settings = array(
 include('anti-spam-functions.php');
 include('anti-spam-info.php');
 
-if ( ! function_exists('antispam_enqueue_script')):
+
 function antispam_enqueue_script() {
 	if (is_singular() && comments_open()) { // load script only for pages with comments form
-		wp_enqueue_script('anti-spam-script', plugins_url('/js/anti-spam-3.4.js', __FILE__), array('jquery'), null, true);
+		wp_enqueue_script('anti-spam-script', plugins_url('/js/anti-spam-3.5.js', __FILE__), array('jquery'), null, true);
 	}
 }
 add_action('wp_enqueue_scripts', 'antispam_enqueue_script');
-endif; // end of antispam_enqueue_script()
 
 
-if ( ! function_exists('antispam_form_part')):
 function antispam_form_part() {
 	global $antispam_settings;
 	$rn = "\r\n"; // .chr(13).chr(10)
@@ -55,11 +55,9 @@ function antispam_form_part() {
 		</p>'.$rn; // empty field (hidden with css); trap for spammers because many bots will try to put email or url here
 	}
 }
-add_action('comment_form', 'antispam_form_part'); // add anti-spam input to the comment form
-endif; // end of antispam_form_part()
+add_action('comment_form', 'antispam_form_part'); // add anti-spam inputs to the comment form
 
 
-if ( ! function_exists('antispam_check_comment')):
 function antispam_check_comment($commentdata) {
 	global $antispam_settings;
 	$rn = "\r\n"; // .chr(13).chr(10)
@@ -145,6 +143,7 @@ function antispam_check_comment($commentdata) {
 				$antispam_message .= $antispam_message_append;
 				@wp_mail($antispam_settings['admin_email'], $antispam_subject, $antispam_message); // send trackback comment to admin email
 			}
+			antispam_log_stats();
 			wp_die($antispam_pre_error_message . $antispam_error_message); // die - do not send trackback
 		}
 	}
@@ -155,10 +154,8 @@ function antispam_check_comment($commentdata) {
 if ( ! is_admin()) {
 	add_filter('preprocess_comment', 'antispam_check_comment', 1);
 }
-endif; // end of antispam_check_comment()
 
 
-if ( ! function_exists('antispam_plugin_meta')):
 function antispam_plugin_meta($links, $file) { // add some links to plugin meta row
 	if (strpos($file, 'anti-spam.php') !== false) {
 		$links = array_merge($links, array('<a href="http://web-profile.com.ua/wordpress/plugins/anti-spam/" title="Plugin page">Anti-spam</a>'));
@@ -168,4 +165,3 @@ function antispam_plugin_meta($links, $file) { // add some links to plugin meta 
 	return $links;
 }
 add_filter('plugin_row_meta', 'antispam_plugin_meta', 10, 2);
-endif; // end of antispam_plugin_meta()

@@ -1,6 +1,7 @@
 <?php
 
-if ( ! function_exists('antispam_log_stats')):
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 function antispam_log_stats() {
 	$antispam_stats = get_option('antispam_stats', array());
 	if (array_key_exists('blocked_total', $antispam_stats)){
@@ -10,4 +11,3 @@ function antispam_log_stats() {
 	}
 	update_option('antispam_stats', $antispam_stats);
 }
-endif; // end of antispam_log_stats()

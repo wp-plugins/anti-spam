@@ -1,6 +1,7 @@
 <?php
 
-if ( ! function_exists('antispam_admin_notice')):
+defined('BASEPATH') OR exit('No direct script access allowed');
+
 function antispam_admin_notice() {
 	global $pagenow;
 	if ($pagenow == 'edit-comments.php'):
@@ -21,10 +22,8 @@ function antispam_admin_notice() {
 	endif; // end of if($pagenow == 'edit-comments.php')
 }
 add_action('admin_notices', 'antispam_admin_notice');
-endif; // end of antispam_admin_notice()
 
 
-if ( ! function_exists('antispam_display_screen_option')):
 function antispam_display_screen_option() {
 	global $pagenow;
 	if ($pagenow == 'edit-comments.php'):
@@ -54,20 +53,14 @@ function antispam_display_screen_option() {
 		<?php
 	endif; // end of if($pagenow == 'edit-comments.php')
 }
-endif; // end of antispam_display_screen_option()
 
 
-if ( ! function_exists('antispam_register_screen_option')):
 function antispam_register_screen_option() {
-	$screen = get_current_screen();
 	add_filter('screen_layout_columns', 'antispam_display_screen_option');
-	$screen->add_option('antispam_info', '');
 }
 add_action('admin_head', 'antispam_register_screen_option');
-endif; // end of antispam_register_screen_option()
 
 
-if ( ! function_exists('antispam_update_screen_option')):
 function antispam_update_screen_option() {
 	if (isset($_POST['antispam_option_submit']) AND $_POST['antispam_option_submit'] == 1) {
 		$user_id = get_current_user_id();
@@ -79,4 +72,3 @@ function antispam_update_screen_option() {
 	}
 }
 add_action('admin_init', 'antispam_update_screen_option');
-endif; // end of antispam_update_screen_option()
