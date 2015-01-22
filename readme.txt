@@ -1,7 +1,7 @@
 === Anti-spam ===
 Contributors: webvitaly
 Donate link: http://web-profile.com.ua/donate/
-Tags: spam, spammer, spammers, comment, comments, antispam, anti-spam, block-spam, spamfree, spam-free, spambot, spam-bot, bot
+Tags: spam, spammer, comment, comments, comment-spam, antispam, anti-spam, block-spam, spam-free, spambot, spam-bot, bot
 Requires at least: 3.3
 Tested up to: 4.1
 Stable tag: 3.5
