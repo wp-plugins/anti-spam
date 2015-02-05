@@ -32,7 +32,7 @@ After installing the Anti-spam plugin **try to submit a comment on your site bei
 If you get an error - you may check the solution in the [Support section](http://wordpress.org/support/plugin/anti-spam) or submit a new topic with detailed description of your problem.
 
 = Useful: =
-* [Anti-spam Pro - more powerful and extended version with settings page](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro")
+* [Anti-spam Pro - extended version with settings and manual spam protection](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro")
 * [Security-protection - blocks brute-force attacks](http://wordpress.org/plugins/security-protection/ "stops brute-force attacks")
 * [WordPress Pro plugins](http://codecanyon.net/popular_item/by_category?category=wordpress&ref=webvitaly)
 
@@ -42,6 +42,12 @@ If you get an error - you may check the solution in the [Support section](http:/
 2. enjoy life without spam in comments
 
 == Frequently Asked Questions ==
+
+= What is the percentage of spam blocked? =
+
+Anti-spam plugin blocks 100% of automatic spam messages (sent by spam-bots via post requests).
+Plugin does not block manual spam (submitted by spammers manually via browser).
+You can use [Anti-spam Pro](http://codecanyon.net/item/antispam-pro/6491169?ref=webvitaly "Upgrade to Pro") plugin if you need to block manual spam.
 
 = Incompatible with: =
 
@@ -81,11 +87,6 @@ You can hide or show this info block in the "Screen Options" section. The info b
 
 Plugin blocks spam only in comments form section and does not block spam from any other forms on site.
 If you installed and activated the plugin and you still receiving spam - probably this could be because of some other forms on your site (for example comments forms).
-
-= What is the percentage of spam blocked? =
-
-Plugin blocks about 99.9% of automatic spam messages (sent by spam-bots via post requests).
-Plugin will pass the messages which were submitted by spammers manually via browser. But such messages happens very rarely.
 
 = What about trackback spam? =
 
