@@ -44,12 +44,12 @@ function antispam_form_part() {
 		echo '		<p class="antispam-group antispam-group-q" style="clear: both;">
 			<label>Current ye@r <span class="required">*</span></label>
 			<input type="hidden" name="antspm-a" class="antispam-control antispam-control-a" value="'.date('Y').'" />
-			<input type="text" name="antspm-q" class="antispam-control antispam-control-q" value="'.$antispam_settings['version'].'" />
+			<input type="text" name="antspm-q" class="antispam-control antispam-control-q" value="'.$antispam_settings['version'].'" autocomplete="off" />
 		</p>'.$rn; // question (hidden with js)
 
 		echo '		<p class="antispam-group antispam-group-e" style="display: none;">
 			<label>Leave this field empty</label>
-			<input type="text" name="antspm-e-email-url-website" class="antispam-control antispam-control-e" value="" />
+			<input type="text" name="antspm-e-email-url-website" class="antispam-control antispam-control-e" value="" autocomplete="off" />
 		</p>'.$rn; // empty field (hidden with css); trap for spammers because many bots will try to put email or url here
 	}
 }

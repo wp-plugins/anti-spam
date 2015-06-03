@@ -22,7 +22,7 @@ Anti-spam plugin blocks spam in comments automatically, invisibly for users and 
 
 * **no captcha**, because spam is not users' problem
 * **no moderation queues**, because spam is not administrators' problem
-* **no options**, because it is great to forget about spam completely
+* **no settings page**, because it is great to forget about spam completely and keep admin section clean
 
 Plugin is easy to use: just install it and it just works.
 
@@ -116,6 +116,7 @@ The plugin is pretty small and easy to read.
 = 3.5 - 2015-01-17 =
 * removed function_exists check because each function has unique prefix
 * removed add_option()
+* added autocomplete="off" for inputs (thanks to Feriman)
 
 = 3.4 - 2014-12-20 =
 * added the ability to hide or show info block in the "Screen Options" section
